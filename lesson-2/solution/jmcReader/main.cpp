@@ -91,7 +91,7 @@ bool			parseFile(const std::string &filename, int &w, int &h)
 	  ++i;
         }
       myfile.close();
-    }
+    }  
   return true;
 }
 

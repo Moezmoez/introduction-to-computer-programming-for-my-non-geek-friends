@@ -42,7 +42,7 @@ Faire un programme qui genere une image de la taille desiree qui alterne 2 coule
 
 Faire un programme capable de dessiner des cercles
 
-http://en.wikipedia.org/wiki/Midpoint_circle_algorithm
+https://banu.com/blog/7/drawing-circles/
 
 ### step 4
 
