@@ -32,7 +32,7 @@ Exemple d une image de 3x3 avec le pixel central blanc et les contour magenta :
 255,0,255 255,0,255 255,0,255
 
 Pour tester vos images :
-> sh reader.sh nomdelimage.jmc
+> ./reader nomdelimage.jmc
 
 ### step 2
 
