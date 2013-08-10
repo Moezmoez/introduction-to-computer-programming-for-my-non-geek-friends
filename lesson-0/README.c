@@ -10,7 +10,7 @@ Il faut imaginer la memoire (la RAM) comme un espace de stockage lineaire, compo
 Qu'est ce qu'un octet ?
 
 -> Un octet est compose de 8 bits.
--> Un bit peu avoir la valeur 0 ou la valeur 1
+-> Un bit peu avoir la valeur 0 ou la valeur 1.
 
 Donc la memoire peut etre representee ainsi :
 
@@ -32,19 +32,17 @@ Et une couleur RGBA ?
 
 
 
-Les caracteres alphanumeriques de la table ASCII (les caracteres simples, sans accents et caracteres speciaux) sont aussi limites a 255 !
+Les caracteres alphanumeriques de la table ASCII (les caracteres simples, sans accents et caracteres speciaux) sont limites a 127 !
 
 Tapez 'man ascii' dans votre terminal
 ['man' signifie manuel -> c'est la notice d'une fonctionnalite grosso modo]
 
-On remarque qu'il y a 127 caracteres differents.
-
-// todo rectifier ca et parler des negatifs
-
 Que tirer de cette decouvertes :)  ???
 
 ---------------------------------------->
-Que les chaines de caracteres prendront en memoire, le meme nombre d'octet que la quantite de craracteres qu'ils contiennent !
+Qu'un caractere prendra 1 octet en memoire !
+
+Et donc que les chaines de caracteres prendront en memoire, le meme nombre d'octet que la quantite de craracteres qu'ils contiennent !
 
 Par consequent "Cesar" prendra 5 octets en memoire. "Le Vaudoue" en prendra combien ?
 
@@ -67,12 +65,12 @@ char			monCaractere = 97; // si vous ne comprenez pas -> `man ascii`
 
 Decryptons cette syntaxe !
 
-Ce que nous avons fais ci dessus, c'est ce que l'on appelle une declaration de variable.
-De maniere naive, cela signifie que lorsque l'ordinateur lit cette ligne de code, il ecrit dans une cellule de la rame
+Ce que nous avons fait ci dessus, c'est ce que l'on appelle une declaration de variable.
+De maniere naive, cela signifie que lorsque l'ordinateur lit cette ligne de code, il ecrit dans une cellule de la RAM
 a une adresse qu'il definit lui meme 97
 97 en decimal est egal a 01100001 en binaire.
 
-Le nom "monCaractere" est une appellation de variable. Elle sert au developpeur a acceder a la valeur de cette zone memoire.
+Le nom "monCaractere" est une appellation de variable. Elle permet au developpeur d'a acceder a la valeur .
 Par exemple il pourra plus loin dans le code ecrire
 
 */
@@ -87,18 +85,18 @@ et non pas a son adresse dans la RAM.
 Nous y reviendrons, mais si vous pouvez commencer a vous habitier avec cette idee des maintenant
 ca serait genial :
 
-monCaracter ici est egal a 97, le developpeur peut en etre certain si il n'a pas fait d'erreur,
+monCaractere ici est egal a 97, le developpeur peut en etre certain si il n'a pas fait d'erreur,
 cependant, l'adresse memoire de 97, le developpeur ne peut pas la connaitre, cette derniere sera differente a chaque execution
 du programme.
 
-Si le developpeur veut pouvoir avoir acces a l'adresse en memoire de la variable il faut la syntaxe de differente :
+Si le developpeur veut avoir acces a l'adresse en memoire de la variable il faut utiliser cette syntaxe :
 
 */
 
 char *monAdresse;
 // l'etoile signifie que la variable mon adresse contiendra l'adresse d'un charactere en memoire
 
-char maLettre = 'j'; //la variable maLettre est on ne sait ou en memoire, cependant on sait qu'elle est eguale a 'j'
+char maLettre = 'j'; //la variable maLettre est on ne sait ou en memoire, cependant on sait qu'elle est egale a 'j'
 
 monAdresse = &maLettre; // le & permet d'acceder a l'addresse de maLettre. Maintenant, monAdresse contient l'adresse de maLettre
 
@@ -129,4 +127,13 @@ Parmis lesquels :
 */
 
 char caractere = 'e'; // 1 caractere = 1 octet = [-128, ..., 127]
-/* int entier = 2046; // 1 entier  = 4 octet = [0, ..., ] */
+int entier = 2046; // 1 entier  = 4 octet = [-2 147 483 648, ...,  2 147 483 647]
+int entier_positif = 2046; // 1 entier positif  = 4 octet = [0, ...,  4 294 967 295]
+float decimal = -3.342; // 1 decimal  = 4 octet = [3.4*10-38, ...,  3.4*1038]
+//...
+
+/*
+  On va s'arreter la et regarder des videos d'introduction au langage C qui reviendrons sur ce que l'on a survole ici.
+  Nous attaquerons ensuite les exercices.
+*/
+
