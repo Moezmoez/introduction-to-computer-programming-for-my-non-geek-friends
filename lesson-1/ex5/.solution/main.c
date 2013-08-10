@@ -13,12 +13,12 @@ int			main(int ac, char **av)
 
   int **tab;
 
-  tab = malloc(sizeof(int**) * h);
+  tab = malloc(sizeof(int*) * h);
 
   int it = 0;
   while (it < h)
     {
-      tab[it] = malloc(sizeof(int*) * w);
+      tab[it] = malloc(sizeof(int) * w);
       int jt = 1;
       tab[it][0] = v - it;
       while (jt < w)
